@@ -48,14 +48,18 @@ void loop() {
   int randomInt = 0;
   
   //comparar con el estado anterior, si es distinto ()
-  if(EstadoA != UltEstadoA || EstadoV != UltEstadoV){
-    if(EstadoA == HIGH || EstadoV == HIGH){
-      randomInt = random(1,numeroCanciones+1);
-      myDFPlayer.play(randomInt);
-      Serial.println("colision detectada");
-      delay(1000);
-    }
-    }
+  if(EstadoA != UltEstadoA && EstadoA == HIGH){
+    randomInt = random(1,numeroCanciones+1);
+    myDFPlayer.play(randomInt);
+    Serial.println("colision detectada");
+    delay(1000);
+  }
+  if(EstadoV != UltEstadoV && EstadoV == HIGH){
+    randomInt = random(1,numeroCanciones+1);
+    myDFPlayer.play(randomInt);
+    Serial.println("colision detectada");
+    delay(1000);
+  }
 
     UltEstadoA = EstadoA;
     UltEstadoV = EstadoV;
