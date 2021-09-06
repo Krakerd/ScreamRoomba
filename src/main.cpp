@@ -55,8 +55,8 @@ void loop() {
     delay(1000);
   }
   if(EstadoV != UltEstadoV && EstadoV == HIGH){
-    randomInt = random(1,numeroCanciones+1);
-    myDFPlayer.play(randomInt);
+    randomInt = random(1,numeroCanciones+1); //elije un numero random [1,num+1)
+    myDFPlayer.play(randomInt); //reproduce una cancion elegida por el random 
     Serial.println("colision detectada");
     delay(1000);
   }
