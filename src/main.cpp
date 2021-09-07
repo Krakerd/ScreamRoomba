@@ -34,11 +34,10 @@ void setup() {
   Serial.println("DFplayer en linea");
 
   myDFPlayer.setTimeOut(500); //colocar el tiempo de espera del reproductor
-  myDFPlayer.volume(10); //volumen del reproductor (max 30)
+  myDFPlayer.volume(20); //volumen del reproductor (max 30)
   
   pinMode(finalA, INPUT); // |---> modo de los pines de entrada
   pinMode(finalV, INPUT); // |
-  myDFPlayer.play(1);
 }
 
 void loop() {
@@ -57,13 +56,13 @@ void loop() {
     myDFPlayer.play(randomInt);
     Serial.println("colision detectada");
     Serial.println(randomInt);
-    delay(1000);
+    delay(100);
   }
   if(EstadoV != UltEstadoV && EstadoV == HIGH){
     myDFPlayer.play(randomInt); //reproduce una cancion elegida por el random 
     Serial.println("colision detectada");
     Serial.println(randomInt);
-    delay(1000);
+    delay(100);
   }
 
     UltEstadoA = EstadoA;
