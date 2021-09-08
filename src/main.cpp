@@ -43,21 +43,22 @@ void setup() {
 void loop() {
   EstadoA = digitalRead(finalA); // |---> Leer estado de los pines
   EstadoV = digitalRead(finalV); // |
+
   int randomInt = 0;
-  randomInt = random(1,numeroCanciones+1);
-  //comparar con el estado anterior, si es distinto ()
+  randomInt = random(1,numeroCanciones+1); //elige un numero aleatorio
 
   if(myDFPlayer.available()){
     printDetail(myDFPlayer.readType(),myDFPlayer.read());
   }
 
+  //comprueba si ha habido una colision con cualquiera de los finales de carrera
   if(EstadoA != UltEstadoA && EstadoA == HIGH){
-    
     myDFPlayer.play(randomInt);
     Serial.println("colision detectada");
     Serial.println(randomInt);
     delay(100);
   }
+
   if(EstadoV != UltEstadoV && EstadoV == HIGH){
     myDFPlayer.play(randomInt); //reproduce una cancion elegida por el random 
     Serial.println("colision detectada");
@@ -70,7 +71,7 @@ void loop() {
 }
 
 void printDetail(uint8_t type, int value){
-switch (type) {
+  switch (type) {
     case TimeOut:
       Serial.println(F("Time Out!"));
       break;
