@@ -1,6 +1,6 @@
-#include <Arduino.h>
-#include <SoftwareSerial.h>
-#include <DFRobotDFPlayerMini.h>
+#include <Arduino.h>             // |---> incluir bilbiotecas necesarias
+#include <SoftwareSerial.h>      // |
+#include <DFRobotDFPlayerMini.h> // |
 
 #define finalA 12 //pin del final azul
 #define finalV 13 //pin del final verde
@@ -13,7 +13,7 @@ int UltEstadoV = LOW; //Ultimo estado del final verde
 int UltEstadoA = LOW; //Ultimo estado del final azul
 int numeroCanciones = 10;
 
-SoftwareSerial mySoftwareSerial(playerRX, playerTX); //crear un serial de software para los pines del df player(RX,TX)
+SoftwareSerial mySoftwareSerial(playerRX, playerTX); //crear un serial de software para los pines del dfplayer(RX,TX)
 DFRobotDFPlayerMini myDFPlayer; //genera un objeto que es el reproductor de sonido
 void printDetail(uint8_t type, int value);
 
