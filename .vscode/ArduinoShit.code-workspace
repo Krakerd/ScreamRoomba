@@ -1,7 +1,8 @@
 {
 	"folders": [
 		{
-			"path": ".."
+			"name": "PythonInteractions",
+			"path": "..\\..\\PythonInteractions"
 		}
 	],
 	"settings": {}
