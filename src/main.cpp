@@ -11,7 +11,7 @@ int EstadoV = 0; //Estado del final de carrera pin verde
 int EstadoA = 0; //Estado del final de carrera pin azul
 int UltEstadoV = LOW; //Ultimo estado del final verde
 int UltEstadoA = LOW; //Ultimo estado del final azul
-int numeroCanciones = 10;
+int numeroCanciones = 12;
 
 SoftwareSerial mySoftwareSerial(playerRX, playerTX); //crear un serial de software para los pines del dfplayer(RX,TX)
 DFRobotDFPlayerMini myDFPlayer; //genera un objeto que es el reproductor de sonido
@@ -34,7 +34,7 @@ void setup() {
   Serial.println("DFplayer en linea");
 
   myDFPlayer.setTimeOut(500); //colocar el tiempo de espera del reproductor
-  myDFPlayer.volume(20); //volumen del reproductor (max 30)
+  myDFPlayer.volume(30); //volumen del reproductor (max 30)
   
   pinMode(finalA, INPUT); // |---> modo de los pines de entrada
   pinMode(finalV, INPUT); // |
