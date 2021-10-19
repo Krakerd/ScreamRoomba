@@ -11,7 +11,7 @@ int EstadoV = 0; //Estado del final de carrera pin verde
 int EstadoA = 0; //Estado del final de carrera pin azul
 int UltEstadoV = LOW; //Ultimo estado del final verde
 int UltEstadoA = LOW; //Ultimo estado del final azul
-int numeroCanciones = 12;
+int numeroCanciones = 13;
 
 SoftwareSerial mySoftwareSerial(playerRX, playerTX); //crear un serial de software para los pines del dfplayer(RX,TX)
 DFRobotDFPlayerMini myDFPlayer; //genera un objeto que es el reproductor de sonido
